@@ -1,0 +1,1 @@
+WEB_CONFIG = YAML.load_file("#{ RAILS_ROOT }/config/web_config.yml")

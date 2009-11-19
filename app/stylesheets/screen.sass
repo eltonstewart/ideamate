@@ -1,0 +1,92 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import blueprint/reset.sass
+// To configure blueprint, edit the partials/base.sass file.
+@import partials/base.sass
+// Import all the default blueprint modules so that we can access their mixins.
+@import blueprint
+
+// To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
++blueprint
+//Recommended Blueprint configuration with scoping and semantic layout:
+
++blueprint-typography
+body
+  +blueprint-utilities
+  +blueprint-debug
+  +blueprint-interaction
+form
+  +blueprint-form
+
+// Page layout can be done using mixins applied to your semantic classes and IDs:
+#container
+  +container
+#header, #footer
+  +column(!blueprint_grid_columns)
+#content
+  margin-top: 20px
+  padding: 30px 10px
+  +column(!blueprint_grid_columns)
+  background: transparent url(/images/grad.jpg) repeat-x top
+    
+#header
+  #logo
+    float: left
+  #user_nav
+    float: right
+    text-decoration: none
+    display: inline-block
+    background: #ffffcc
+    padding: 3px 7px
+    span
+      font-weight: bold
+      margin: 0 5px 0 0
+    a
+      margin: 0 5px 0 0
+    
+#jot_list
+  +column(4)
+  padding: 10px
+  +colborder
+  
+#jots
+  +column(18, true)
+
+  #jot
+    +column(5)
+    height: 120px
+    padding: 10px
+    margin-bottom: 10px
+    background: #eee
+    h2
+      font:
+        weight: bold
+      color: #666
+      margin: 0 0 10px 0
+      line-height: 90%
+  
+  
+#newidea
+  #title
+    float: left
+    margin: 0 10px 20px 0
+  #description
+    float: left
+    margin-right: 10px
+    input
+      width: 500px
+  #submit
+    padding-top: 2px
+    margin-left: 10px 
+    input
+      text-align: center
+      width: 160px
+      font:
+        weight: bold
+        size: 18px
+      display: block
+      background: #99cc99
+      color: #000
+      padding: 3px 7px
+      border: none
+      cursor: pointer
+  

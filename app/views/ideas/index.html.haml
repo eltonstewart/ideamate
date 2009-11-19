@@ -1,0 +1,29 @@
+%h1
+  = current_user.login + "'s jots"
+#newidea
+  - form_for(@idea) do |f|
+    = f.error_messages
+    #title
+      = f.text_field :title, :value => 'title', :onfocus => 'this.value = "";'
+    #description
+      = f.text_field :description, :value => 'description', :onfocus => 'this.value = "";'
+    #submit
+      = f.submit 'ADD NEW IDEA' 
+.clear
+#jot_list
+  %b
+    List of Ideas
+  %ul
+    - @ideas.each do |idea|
+      %li
+        = link_to idea.title, edit_idea_path(idea)
+#jots
+  - @ideas.each do |idea|
+    #jot
+      %h2
+        =h idea.title
+      %p
+        =h idea.description
+      #links
+        = link_to 'Edit', edit_idea_path(idea)
+        = link_to 'Delete', idea, :confirm => 'Are you sure?', :method => :delete

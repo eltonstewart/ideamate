@@ -1,0 +1,23 @@
+<p>
+  <b>Title:</b>
+  <%=h @idea.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @idea.description %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @user %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @idea.category_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>
